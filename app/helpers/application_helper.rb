@@ -7,4 +7,8 @@ module ApplicationHelper
 	  "#{base_title} | #{@title}"	
 	end
   end
+
+  def logo_path
+    "tutorial.png"
+  end
 end

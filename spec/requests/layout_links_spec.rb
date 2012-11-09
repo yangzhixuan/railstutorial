@@ -25,4 +25,15 @@ describe "LayoutLinks" do
     get '/signup'
     response.should have_selector('title', :content => "Sign up")
   end
+  
+  it "should have right links on the home page" do
+    def check_link(str, title="")
+      click_link str
+      response.should have_selector('title', :content => (title.empty?) ? str : title)
+    end
+    visit root_path
+    check_link "About" 
+    check_link "Help" 
+    check_link "Contact" 
+  end
 end

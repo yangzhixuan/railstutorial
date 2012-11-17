@@ -1,1 +1,12 @@
-<%= @user.name %>, <%= @user.email%>
+<div id="container">
+  <div style="float:left;">
+    <h1>
+      <%= @user.name %>
+    </h1>
+  </div>
+  
+  <div style="float:right;">
+    <%= link_to user_url(@user), @user %>
+  </div>
+  <div style="clear:both;"></div>
+</div>

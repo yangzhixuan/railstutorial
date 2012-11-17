@@ -1,0 +1,8 @@
+
+(evince:7061): Gtk-WARNING **: Theme parsing error: gtk.css:70:18: Not using units is deprecated. Assuming 'px'.
+
+(evince:7061): Gtk-WARNING **: Theme parsing error: gtk.css:70:20: Not using units is deprecated. Assuming 'px'.
+
+(evince:7086): Gtk-WARNING **: Theme parsing error: gtk.css:70:18: Not using units is deprecated. Assuming 'px'.
+
+(evince:7086): Gtk-WARNING **: Theme parsing error: gtk.css:70:20: Not using units is deprecated. Assuming 'px'.

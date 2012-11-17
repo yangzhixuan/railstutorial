@@ -1,0 +1,9 @@
+<table style="margin: 0 auto;">
+  <% @allUsers.each do |user|%>
+       <tr>
+         <td> <%= user.name %> </td>
+         <td> <%= user.email %> </td>
+         <td> <%= link_to "Profile", user %></td>
+       </tr>
+  <% end %>
+</table>

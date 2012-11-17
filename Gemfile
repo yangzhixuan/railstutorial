@@ -1,5 +1,6 @@
 source 'http://ruby.taobao.org'
 
+
 gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
@@ -45,4 +46,5 @@ end
 group :test do
 	gem 'rspec'
 	gem 'webrat'
+    gem 'factory_girl_rails', "1.0"
 end

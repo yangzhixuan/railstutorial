@@ -1,0 +1,11 @@
+<% if @user.errors.any? %>
+  <div id="error_explaination">
+    <h2><%= pluralize(@user.errors.count, "error") %>!</h2>
+    <p>There were problems with these fields: </p>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

@@ -49,3 +49,7 @@ group :test do
     gem 'sqlite3', '> 0', :group => :development
     gem 'factory_girl_rails', "1.0"
 end
+
+group :production do
+    gem 'activerecord-postgresql-adapter'
+end

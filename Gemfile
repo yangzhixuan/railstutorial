@@ -40,16 +40,16 @@ gem 'jquery-rails'
 group :development do
 	gem 'rspec-rails'
     gem 'annotate'
-    gem 'sqlite3', '> 0', :group => :development
+    gem 'sqlite3'
 end
 
 group :test do
 	gem 'rspec'
 	gem 'webrat'
-    gem 'sqlite3', '> 0', :group => :development
+    gem 'sqlite3'
     gem 'factory_girl_rails', "1.0"
 end
 
 group :production do
-    gem 'activerecord-postgresql-adapter'
+    gem 'pg'
 end

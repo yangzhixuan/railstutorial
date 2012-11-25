@@ -34,9 +34,16 @@ class User < ActiveRecord::Base
   end
     
   def self.authenticate(email, pass)
-    u = find_by_email(email) or nil
+    u = find_by_email(email) 
+    return nil if u.nil?
     return u if u.match_password?(pass)
   end
+
+  def self.authenticate_with_salt(id, salt)
+    u = find_by_id(id)
+    return nil if u.nil?
+    return u if u.salt == salt
+  end 
 
   private
     def encrypt_password

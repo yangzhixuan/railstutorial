@@ -28,12 +28,39 @@ describe "LayoutLinks" do
   
   it "should have right links on the home page" do
     def check_link(str, title="")
+      visit root_path
       click_link str
       response.should have_selector('title', :content => (title.empty?) ? str : title)
     end
-    visit root_path
     check_link "About" 
     check_link "Help" 
     check_link "Contact" 
+  end
+
+  describe "when not signed in" do
+    it "should have a sign in link" do
+      visit root_path
+      response.should have_selector("a", :href => signin_path)
+   end 
+  end
+
+  describe "when signed in" do
+    before(:each) do
+      @user = Factory(:user)
+      visit signin_path
+      fill_in :email, :with => @user.email
+      fill_in :password, :with => @user.password
+      click_button
+    end
+
+    it "should have a sign out link" do
+      visit root_path
+      response.should have_selector("a", :href => signout_path)
+    end
+
+    it "should have a profile link" do
+      visit root_path
+      response.should have_selector("a", :href => user_path(@user))
+    end
   end
 end

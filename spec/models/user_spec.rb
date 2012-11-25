@@ -115,8 +115,13 @@ describe User do
         u.should == @user
       end
 
-      it "should return nil when email or password mismatches" do
+      it "should return nil when password mismatches" do
         u = User.authenticate(@attr[:email], "12345")
+        u.should be_nil
+      end
+
+      it "should return nil when email doesn't exsit" do
+        u = User.authenticate("a@b.c", "123")
         u.should be_nil
       end
     end

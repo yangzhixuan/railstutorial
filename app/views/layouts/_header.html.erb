@@ -3,9 +3,12 @@
 	<%= link_to logo, root_path%>
 	<nav class="round">
 		<ul>
-			<li> <%= link_to "Home", root_path %></li>
-			<li> <%= link_to "Help", help_path %></li>
-			<li> <%= link_to "Sign In", "#" %></li>
+            <% if signed_in? %>
+              <li> <%= link_to current_user.email, user_path(current_user) %> </li>
+              <li> <%= link_to "sign out", signout_path, :method => :delete %> </li>
+            <% else %>
+              <li> <%= link_to "sign in", signin_path %> </li>
+            <% end %>
 		</ul>
 	</nav>
 </header>

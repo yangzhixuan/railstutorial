@@ -39,7 +39,7 @@ describe UsersController do
 
     it "has right content" do
       get 'show', :id => @user
-      response.should have_selector("h1", :content => @user.name) 
+      response.should have_selector("h1", :content => @user.email) 
     end
   end
 
@@ -80,6 +80,11 @@ describe UsersController do
       it "should redirect to profile page" do
         post :create, :user => @attr
         response.should redirect_to(user_path(assigns(:user)))
+      end
+      
+      it "should sign the user in" do
+        post :create, :user => @attr
+        controller.should be_signed_in
       end
     end
   end

@@ -1,12 +1,24 @@
 <div id="container">
   <div style="float:left;">
     <h1>
-      <%= @user.name %>
+      <%= @user.email %>
     </h1>
   </div>
   
   <div style="float:right;">
-    <%= link_to user_url(@user), @user %>
+    <table>
+      <tr>
+        <td>Name</td> <td><%= @user.name %> </td>
+      </tr>
+
+      <tr>
+        <td>URL</td> <td> <%= link_to user_path(@user), @user %> </td>
+      </tr>
+
+      <tr>
+        <td>Created at</td> <td> <%= @user.created_at.strftime("%Y-%m-%d") %> </td>
+      </tr>
+    </table>
   </div>
   <div style="clear:both;"></div>
 </div>
